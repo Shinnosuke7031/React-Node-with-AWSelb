@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      flower: {}
+      flower: []
     }
     this.getFlower();
   }
@@ -13,15 +13,20 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          flower: data
+          flower: data.commentInfo
         });
       });
   }
+
   render() {
     return (
       <div className="App">
-        <h1>{this.state.flower.name}</h1>
-        <p>{this.state.flower.colour}</p>
+        {this.state.flower.map((temp) => 
+          <div>
+            <p>{temp.name}</p>
+            <p>{temp.text}</p>
+          </div>
+        )}
       </div>
     );
   }

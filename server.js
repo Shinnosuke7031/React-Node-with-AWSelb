@@ -3,6 +3,10 @@ import express from 'express';
 
 const PORT = process.env.HTTP_PORT || 4001;
 const app = express();
+const fs = require("fs");
+
+const text_json = require('./text.json');
+
 
 app.use(express.static(path.join(__dirname, 'client', 'build')));// <-- Get front-end
 
@@ -11,10 +15,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/flower', (req, res) => {
-  res.json({
-    name: 'Dandelion',
-    colour: 'Blue-ish'
-  });
+  console.log(text_json);
+  res.json(text_json);
+
 });
 
 app.listen(PORT, () => {

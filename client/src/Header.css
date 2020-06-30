@@ -1,0 +1,13 @@
+.header {
+  margin: 0 auto;
+  text-align: center;
+  height: 48px;
+  width: 100%;
+  background-color: aqua;
+}
+
+.header h1 {
+  margin: 0 auto;
+  line-height: 48px;
+  width: 80%;
+}
