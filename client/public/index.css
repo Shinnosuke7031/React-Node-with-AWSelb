@@ -9,7 +9,11 @@ html, body {
     sans-serif;
 }
 
-h1 {
+h1, p, div {
   padding: 0;
+  margin: 0;
+}
+
+hr {
   margin: 0;
 }

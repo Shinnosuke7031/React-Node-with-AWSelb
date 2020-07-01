@@ -1,0 +1,44 @@
+.App {
+  margin: 0 auto;
+  width: 800px;
+  height: 100%;
+}
+
+.App h1 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.App p {
+  margin: 10px 0;
+  
+}
+
+.showCom {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.showName {
+  font-weight: bold;
+}
+
+.showText {
+  padding: 0.5em 1em;
+  margin: 15px 0;
+  color: black;/*文字色*/
+  background: #00FF00;
+  border: solid 3px #00FF00;/*線*/
+  border-radius: 10px;/*角の丸み*/
+  width: 90%;
+}
+
+.bottomLine {
+  background-color: black;
+  width: 110.8%;
+  position: absolute;
+  left: -40px;
+  bottom: 0px;
+  z-index: 2;
+}

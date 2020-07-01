@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   res.send('just gonna send it');
 });
 
-app.get('/flower', (req, res) => {
+app.get('/data', (req, res) => {
   console.log(text_json);
   res.json(text_json);
 
