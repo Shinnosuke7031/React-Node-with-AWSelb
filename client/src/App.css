@@ -42,3 +42,35 @@
   bottom: 0px;
   z-index: 2;
 }
+
+.newMes {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.newMes input{
+  padding: 3px 5px;
+  outline: none;
+  background-color: rgb(235, 235, 235);
+  border: px solid black;
+  border-radius: 10px;
+}
+
+.newT {
+  display: flex;
+}
+
+.newT textarea {
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  border-radius: 10px;
+  flex: 6;
+  height: 20px;
+  padding: 3px 5px;
+  outline: none;
+}
+
+
+.newT input {
+  flex: 1;
+}

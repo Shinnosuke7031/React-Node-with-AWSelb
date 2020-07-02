@@ -5,8 +5,7 @@ const Header = () =>  {
 
   return (
     <div className="header">
-      <h1>リアルタイムチャット</h1>
-      
+      <h1>チャットAPP</h1>
     </div>
   );
 }
