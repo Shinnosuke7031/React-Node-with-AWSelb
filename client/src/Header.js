@@ -5,7 +5,7 @@ const Header = () =>  {
 
   return (
     <div className="header">
-      <h1>チャットAPP</h1>
+      <h1>掲示板APP</h1>
     </div>
   );
 }
