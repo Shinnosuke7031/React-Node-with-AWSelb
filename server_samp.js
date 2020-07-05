@@ -6,10 +6,10 @@ const app = express();
 
 const mysql = require("mysql");
 const connection = mysql.createConnection({
-  host: "aa1035bth7m2t1e.clsbnr7p4q4m.ap-northeast-1.rds.amazonaws.com",
-  user: "root",
-  password: "MySQL731sin",
-  database: "ChatApp",
+  host: "",
+  user: "",
+  password: "",
+  database: "",
 });
 
 //const text_json = require('./text.json');

@@ -23,7 +23,7 @@ class App extends Component {
       .then(response => response.json())
       .then(temp => {
         this.setState({
-          data: temp.commentInfo,
+          data: temp,
           originData: temp
         });
         dataLastID=this.state.data.length;
@@ -35,7 +35,7 @@ class App extends Component {
       .then(response => response.json())
       .then(temp => {
         this.setState({
-          data: temp.commentInfo
+          data: temp
         });
         dataLastID=this.state.data.length;
       });
