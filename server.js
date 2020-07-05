@@ -6,18 +6,19 @@ const app = express();
 
 
 const mysql = require("mysql");
-const connection = mysql.createConnection({
+/*const connection = mysql.createConnection({
   host: "aa1035bth7m2t1e.clsbnr7p4q4m.ap-northeast-1.rds.amazonaws.com",
   user: "root",
   password: "MySQL731sin",
   database: "ChatApp",
-});
-/*const connection = mysql.createConnection({
+});*/
+const connection = mysql.createConnection({
   host: "process.env.RDS_HOSTNAME",
   user: "process.env.RDS_USERNAME",
   password: "process.env.RDS_PASSWORD",
-  database: "process.env.RDS_PORT",
-});*/
+  port: "process.env.RDS_PORT",
+  database: "ChatApp"
+});
 
 //const text_json = require('./text.json');
 connection.connect(function(err) {
