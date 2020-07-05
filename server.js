@@ -20,6 +20,12 @@ const connection = mysql.createConnection({
 });
 
 //const text_json = require('./text.json');
+connection.connect(function(err) {
+  if (err) {
+    console.error('Database connection failed: ' + err.stack);
+    return;
+  }
+});
 
 
 app.use(express.static(path.join(__dirname, 'client', 'build')));// <-- Get front-end
