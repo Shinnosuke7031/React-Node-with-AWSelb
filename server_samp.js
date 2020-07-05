@@ -12,9 +12,6 @@ const connection = mysql.createConnection({
   database: "",
 });
 
-//const text_json = require('./text.json');
-
-
 app.use(express.static(path.join(__dirname, 'client', 'build')));// <-- Get front-end
 
 app.get('/', (req, res) => {
@@ -22,8 +19,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/data', (req, res) => {
-  //console.log(text_json);
-  //res.json(text_json);
   connection.query(
     'SELECT * FROM comments',
     (error, results) => {
