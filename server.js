@@ -14,7 +14,7 @@ const mysql = require("mysql");
 });*/
 const connection = mysql.createConnection({
   host: process.env.RDS_HOSTNAME,
-  user: process.env.RD_USERNAME,
+  user: process.env.RDS_USERNAME,
   password: process.env.RDS_PASSWORD,
   port: process.env.RDS_PORT,
   database: RDS_DB_NAME
