@@ -17,7 +17,7 @@ const connection = mysql.createConnection({
   user: process.env.RDS_USERNAME,
   password: process.env.RDS_PASSWORD,
   port: process.env.RDS_PORT,
-  database: RDS_DB_NAME
+  database: process.env.RDS_DB_NAME
 });
 
 //const text_json = require('./text.json');
