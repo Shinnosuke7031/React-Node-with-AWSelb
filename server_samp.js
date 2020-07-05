@@ -12,6 +12,7 @@ const connection = mysql.createConnection({
   database: "",
 });
 
+
 //const text_json = require('./text.json');
 
 

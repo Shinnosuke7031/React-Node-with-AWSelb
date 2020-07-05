@@ -12,6 +12,7 @@ const connection = mysql.createConnection({
   database: "ChatApp",
 });
 
+
 //const text_json = require('./text.json');
 
 
