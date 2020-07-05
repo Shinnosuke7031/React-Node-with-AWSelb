@@ -13,11 +13,11 @@ const mysql = require("mysql");
   database: "ChatApp",
 });*/
 const connection = mysql.createConnection({
-  host: "process.env.RDS_DB_HOSTNAME",
-  user: "process.env.RD_DBS_USERNAME",
-  password: "process.env.RDS_DB_PASSWORD",
-  port: "process.env.RDS_DB_PORT",
-  database: "ChatApp"
+  host: process.env.RDS_DB_HOSTNAME,
+  user: process.env.RD_DBS_USERNAME,
+  password: process.env.RDS_DB_PASSWORD,
+  port: process.env.RDS_DB_PORT,
+  database: RDS_DB_NAME
 });
 
 //const text_json = require('./text.json');
