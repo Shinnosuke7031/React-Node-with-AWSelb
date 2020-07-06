@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import "./App.css";
 
-let dataLastID=0;
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +24,6 @@ class App extends Component {
           data: temp,
           originData: temp
         });
-        dataLastID=this.state.data.length;
       });
   }
 
@@ -37,8 +34,44 @@ class App extends Component {
         this.setState({
           data: temp
         });
-        dataLastID=this.state.data.length;
       });
+  }
+
+  addData() {
+    const sendData = {name: this.state.newName, text: this.state.newText};
+    const param  = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+    
+      // リクエストボディ
+      body: JSON.stringify(sendData)
+    };
+    
+    fetch('/data/create', param)
+      .then((res) => res.text())
+      .then((data) => console.log( data ))
+      .catch((err) => console.error( err ));
+  }
+
+  deleteData(tempID, e) {
+    e.preventDefault();
+    const sendData = {id: tempID};
+    const param  = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      body: JSON.stringify(sendData)
+    };
+    
+    fetch('/data/delete', param)
+      .then((res) => res.text())
+      .then((data) => console.log( data ))
+      .catch((err) => console.error( err ));
+    
+    this.getData();
   }
 
   handleChangeName(event) {
@@ -61,15 +94,8 @@ class App extends Component {
   }
 
   addComment() {
-    const newData = [...this.state.data, {id: dataLastID + 1, name: this.state.newName, text: this.state.newText}];
-    console.log(newData);
-    this.setState({data: newData});
-  }
-
-  componentDidUpdate() {
-    console.log(this.state.newName);
-    console.log(this.state.newText);
-    //this.getData();
+    this.addData();
+    this.getData();
   }
 
   render() {
@@ -113,9 +139,11 @@ class App extends Component {
             <div className="showName">
               <p>{temp.name}</p>
             </div>
-            <div className="showText">
+            <div className="textFlex">
               <p>{temp.text}</p>
+              <a href="#" onClick={(e)=>this.deleteData(temp.id, e)}>削除</a>
             </div>
+            
             <hr></hr>
           </li>
         )}

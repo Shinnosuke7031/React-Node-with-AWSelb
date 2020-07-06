@@ -24,15 +24,33 @@
   font-weight: bold;
 }
 
-.showText {
+.textFlex {
+  display: flex;
+  height: 100%;
+  margin: 20px auto;
+  position: relative;
+}
+
+.textFlex p {
+  margin: 0;
   padding: 0.5em 1em;
-  margin: 15px 0;
   color: black;/*文字色*/
   background: #00FF00;
   border: solid 3px #00FF00;/*線*/
   border-radius: 10px;/*角の丸み*/
   width: 90%;
+  flex: 9;
 }
+
+.textFlex a {
+  flex: 1;
+  display: block;
+  padding: 5px;
+  position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
 
 .bottomLine {
   background-color: black;
