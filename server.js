@@ -36,7 +36,7 @@ app.get('/data', (req, res) => {
   connection.query(
     'SELECT * FROM comments',
     (error, results) => {
-      //console.log(results);
+      console.log(results);
       res.json(results);
     }
   );
