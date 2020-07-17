@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
 const mysql = require("mysql");
 
 const connection = mysql.createConnection({
@@ -25,6 +24,13 @@ connection.connect(function(err) {
   }
 });
 
+connection.query(
+  'SELECT * FROM comments',
+  (error, results) => {
+    console.log(results);
+  }
+);
+
 
 app.use(express.static(path.join(__dirname, 'client', 'build')));// <-- Get front-end
 
@@ -32,12 +38,16 @@ app.get('/', (req, res) => {
   res.send('just gonna send it');
 });
 
-app.get('/data', (req, res) => {
+app.get('/data/get', (req, res) => {
   connection.query(
     'SELECT * FROM comments',
     (error, results) => {
+      if(!error) {
       console.log(results);
       res.json(results);
+      }else{
+        throw error;
+      }
     }
   );
 

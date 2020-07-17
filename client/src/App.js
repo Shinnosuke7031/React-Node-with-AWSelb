@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   initialGetData() {
-    fetch('/data')
+    fetch('/data/get')
       .then(response => response.json())
       .then(temp => {
         this.setState({
@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   getData() {
-    fetch('/data')
+    fetch('/data/get')
       .then(response => response.json())
       .then(temp => {
         this.setState({
@@ -116,7 +116,7 @@ class App extends Component {
           <form onSubmit={()=>this.handleSubmit()}>
             <p style={{fontSize: "20px", textDecoration: "underline"}}>新規コメント</p>
             <p>名前</p>
-            <input type="text" onChange={this.handleChangeName}/>
+            <input id="inputName" type="text" onChange={this.handleChangeName}/>
             <p>コメント内容</p>
             <div className="newT">
               <textarea onChange={this.handleChangeText} />
@@ -141,7 +141,7 @@ class App extends Component {
             </div>
             <div className="textFlex">
               <p>{temp.text}</p>
-              <a href="#" onClick={(e)=>this.deleteData(temp.id, e)}>削除</a>
+              <a href="/#" onClick={(e)=>this.deleteData(temp.id, e)}>削除</a>
             </div>
             
             <hr></hr>
